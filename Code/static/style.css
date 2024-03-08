@@ -1,0 +1,52 @@
+.ribbon {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+.ribbon > div {
+  font-size: 30px;
+}
+
+.ribbonbutton {font-size: 24px;}
+
+.button {
+  font-size: 15px;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+  padding-left: 20px;
+}
+
+table {
+  margin-left: 10px;
+}
+
+th, td{
+  border-collapse: collapse;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.tablebutton {
+  border: 0px solid black;
+}
+
+p {
+  margin-left: 10px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  height: 20px;
+  align-items: center;
+  padding: 10px;
+}

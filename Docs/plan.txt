@@ -1,0 +1,80 @@
+Html pages
+
+
+- guests.html 
+    vendeg tablazat 
+    edit, new, burgerlista, new guest gomb 
+- guesteditnew.html
+    vendeg adatok edit + save + cancel
+
+
+- burgers.html
+    hamburger tablazat 
+    edit, new, vendeglista, new burger gomb 
+
+- burgereditnew.html
+    hamburger adatok edit + save + cancel
+
+
+Routing
+
+middleware/common/
+    renderMW.js
+
+middleware/guest/
+    getGuestsMW.js
+    getGuestMW.js
+    saveGuestMW.js
+    delGuestMW.js
+
+middleware/burgers/
+    getBurgersMW.js
+    getBurgerMW.js
+    saveBurgerMW.js
+    delBurgerMW.js
+
+GET /                       - guests.html
+GET /guest                  - guests.html
+    getGuestsMW
+    renderMW(guests.html)
+
+GET,POST /guest/new              - guesteditnew.html (new)
+    getBurgersMW
+    saveGuestMW
+    renderMW(guesteditnew.html (new))
+        - ha volt vmi érték -> form feltölt
+        - ha nem -> üres form
+
+GET,POST /guest/edit/:guestid    - guesteditnew.html (edit)
+    getBurgersMW
+    getGuestMW
+    saveGuestMW
+    renderMW(guesteditnew.html (new))
+        - ha volt vmi érték -> form feltölt
+        - ha nem -> üres form
+
+GET /guest/del/:guestid
+    getGuestMW
+    delGuestMW
+
+
+GET /hamburger              - burgers.html
+    getBurgersMW
+    renderMW(burgers.html)
+
+GET, POST /hamburger/new          - burgereditnew.html (new)
+    saveBurgerMW
+    renderMW(burgereditnew.html (new))
+        - ha volt vmi érték -> form feltölt
+        - ha nem -> üres form
+
+GET, POST /hamburger/edit/:burgerid    - burgereditnew.html (edit)
+    getBurgerMW
+    saveBurgerMW
+    renderMW(guesteditnew.html (edit))
+        - ha volt vmi érték -> form feltölt
+        - ha nem -> üres form
+
+GET /hamburger/del/:burgerid
+    getBurgerMW
+    delBurgerMW
