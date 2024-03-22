@@ -1,6 +1,5 @@
 Html pages
 
-
 - guests.html 
     vendeg tablazat 
     edit, new, burgerlista, new guest gomb 
@@ -27,7 +26,7 @@ middleware/guest/
     saveGuestMW.js
     delGuestMW.js
 
-middleware/burgers/
+middleware/burger/
     getBurgersMW.js
     getBurgerMW.js
     saveBurgerMW.js
@@ -49,7 +48,7 @@ GET,POST /guest/edit/:guestid    - guesteditnew.html (edit)
     getBurgersMW
     getGuestMW
     saveGuestMW
-    renderMW(guesteditnew.html (new))
+    renderMW(guesteditnew.html (edit))
         - ha volt vmi érték -> form feltölt
         - ha nem -> üres form
 
@@ -58,23 +57,23 @@ GET /guest/del/:guestid
     delGuestMW
 
 
-GET /hamburger              - burgers.html
+GET /burger              - burgers.html
     getBurgersMW
     renderMW(burgers.html)
 
-GET, POST /hamburger/new          - burgereditnew.html (new)
+GET, POST /burger/new          - burgereditnew.html (new)
     saveBurgerMW
     renderMW(burgereditnew.html (new))
         - ha volt vmi érték -> form feltölt
         - ha nem -> üres form
 
-GET, POST /hamburger/edit/:burgerid    - burgereditnew.html (edit)
+GET, POST /burger/edit/:burgerid    - burgereditnew.html (edit)
     getBurgerMW
     saveBurgerMW
     renderMW(guesteditnew.html (edit))
         - ha volt vmi érték -> form feltölt
         - ha nem -> üres form
 
-GET /hamburger/del/:burgerid
+GET /burger/del/:burgerid
     getBurgerMW
     delBurgerMW
