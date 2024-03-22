@@ -1,16 +1,18 @@
 .ribbon {
-    display: flex;
-    flex-direction: row;
-    padding-left: 10px;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 .ribbon > div {
   font-size: 30px;
 }
 
-.ribbonbutton {font-size: 24px;}
+.ribbonbutton {
+  font-size: 24px;
+}
 
 .button {
   font-size: 15px;
@@ -28,7 +30,8 @@ table {
   margin-left: 10px;
 }
 
-th, td{
+th,
+td {
   border-collapse: collapse;
   border: 1px solid black;
   padding: 5px;

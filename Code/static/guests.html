@@ -1,44 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <link rel="stylesheet" href="style.css">
-        <title>Vendégek</title>
-    </head>
-    <body>
-        <div class="ribbon">
-            <div><button type="button" class="ribbonbutton" onclick="window.location.href='guests.html';">Vendégek</button></div>
-            <div><button type="button" class="ribbonbutton" onclick="window.location.href='burgers.html';">Hamburgerek</button></div>
-        </div>
-        <div class="heading">
-            <h1>Vendégek</h1>
-            <div><button type="button" class="button" onclick="window.location.href='guesteditnew.html';">Új vendég</button></div>
-        </div>
-        <div>
-            <table>
-                <tr>
-                  <th>Név</th>
-                  <th>Érkezés</th>
-                  <th>Hamburger</th>
-                </tr>
-                <tr >
-                  <td>Gipsz Jakab</td>
-                  <td>4</td>
-                  <td>Dupla húsos</td>
-                  <td class="tablebutton"><button type="button" onclick="window.location.href='guesteditnew.html';">Módosítás</button></td>
-                  <td class="tablebutton"><button type="button" >Törlés</button></td>
-                </tr>
-                <tr >
-                    <td>Kovács Béla</td>
-                    <td>2</td>
-                    <td>Csípős hamburger szószos</td>
-                    <td class="tablebutton"><button type="button" onclick="window.location.href='guesteditnew.html';">Módosítás</button></td>
-                    <td class="tablebutton"><button type="button" >Törlés</button></td>
-                  </tr>
-            </table>
-            <p>Elkészítendő bucik száma: 0 <br>
-                Elkészítendő húspogácsák száma: 0
-            </p>
-        </div>
-    </body>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Vendégek</title>
+  </head>
+  <body>
+    <div class="ribbon">
+      <div>
+        <button
+          type="button"
+          class="ribbonbutton"
+          onclick="window.location.href='guests.html';"
+        >
+          Vendégek
+        </button>
+      </div>
+      <div>
+        <button
+          type="button"
+          class="ribbonbutton"
+          onclick="window.location.href='burgers.html';"
+        >
+          Hamburgerek
+        </button>
+      </div>
+    </div>
+    <div class="heading">
+      <h1>Vendégek</h1>
+      <div>
+        <button
+          type="button"
+          class="button"
+          onclick="window.location.href='guesteditnew.html';"
+        >
+          Új vendég
+        </button>
+      </div>
+    </div>
+    <div>
+      <table>
+        <tr>
+          <th>Név</th>
+          <th>Érkezés</th>
+          <th>Hamburger</th>
+        </tr>
+        <tr>
+          <td>Gipsz Jakab</td>
+          <td>4</td>
+          <td>Dupla húsos</td>
+          <td class="tablebutton">
+            <button
+              type="button"
+              onclick="window.location.href='guesteditnew.html';"
+            >
+              Módosítás
+            </button>
+          </td>
+          <td class="tablebutton"><button type="button">Törlés</button></td>
+        </tr>
+        <tr>
+          <td>Kovács Béla</td>
+          <td>2</td>
+          <td>Csípős hamburger szószos</td>
+          <td class="tablebutton">
+            <button
+              type="button"
+              onclick="window.location.href='guesteditnew.html';"
+            >
+              Módosítás
+            </button>
+          </td>
+          <td class="tablebutton"><button type="button">Törlés</button></td>
+        </tr>
+      </table>
+      <p>
+        Elkészítendő bucik száma: 0 <br />
+        Elkészítendő húspogácsák száma: 0
+      </p>
+    </div>
+  </body>
 </html>
