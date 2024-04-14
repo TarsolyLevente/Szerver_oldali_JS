@@ -1,0 +1,36 @@
+<%- include ('listheader',{pagetitle: 'Hamburger létrehozás/módosítás'}, {listname: 'Hamburgerek'}, {newname: 'Új burger'}) -%>
+
+    <div>
+      <table>
+        <tr>
+          <th>Név</th>
+          <th>Húspogácsák</th>
+          <th>Van-e csípős</th>
+          <th>Van-e szósz</th>
+          <th>Kül. összetevő</th>
+        </tr>
+        <% burgers.forEach(function(burger){ %>
+          <tr>
+            <td>
+              <%= burger.nev %>
+            </td>
+            <td>
+              <%= burger.pogacsak %>
+            </td>
+            <td><input type="checkbox" <%= burger.csipos ? "checked" : "" %>/></td>
+            <td><input type="checkbox" <%= burger.szosz ? "checked" : "" %>/></td>
+            <td></td>
+            <td class="tablebutton">
+              <button
+                type="button"
+                onclick="window.location.href='burgereditnew';"
+              >
+                Módosítás
+              </button>
+            </td>
+            <td class="tablebutton"><button type="button">Törlés</button></td>
+          </tr>
+        <% }); %>
+      </table>
+    </div>
+<%- include ('footer') %>

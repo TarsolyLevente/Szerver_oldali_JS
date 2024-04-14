@@ -1,17 +1,10 @@
-<!doctype html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Vendégek</title>
-  </head>
-  <body>
+<%- include ('header',{pagetitle: 'Vendégek'}) -%>
     <div class="ribbon">
       <div>
         <button
           type="button"
           class="ribbonbutton"
-          onclick="window.location.href='guests.html';"
+          onclick="window.location.href='/guest';"
         >
           Vendégek
         </button>
@@ -20,7 +13,7 @@
         <button
           type="button"
           class="ribbonbutton"
-          onclick="window.location.href='burgers.html';"
+          onclick="window.location.href='/burger';"
         >
           Hamburgerek
         </button>
@@ -79,5 +72,4 @@
         Elkészítendő húspogácsák száma: 0
       </p>
     </div>
-  </body>
-</html>
+<%- include ('footer') %>

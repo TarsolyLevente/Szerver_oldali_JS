@@ -1,11 +1,4 @@
-<!doctype html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Hamburger létrehozás/módosítás</title>
-  </head>
-  <body>
+<%- include ('header',{pagetitle: 'Hamburger létrehozás/módosítás'}) %>
     <h1>Hamburger létrehozás/módosítás</h1>
     <div class="flex">
       <p>Név</p>
@@ -35,17 +28,16 @@
       <button
         type="button"
         class="button"
-        onclick="window.location.href='burgers.html';"
+        onclick="window.location.href='burgers.ejss';"
       >
         Mentés és vissza
       </button>
       <button
         type="button"
         class="button"
-        onclick="window.location.href='burgers.html';"
+        onclick="window.location.href='burgers.ejs';"
       >
         Vissza
       </button>
     </div>
-  </body>
-</html>
+<%- include ('footer') %>

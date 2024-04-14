@@ -41,7 +41,7 @@ module.exports = function (app) {
    * Edit guest
    */
   app.use(
-    "/guest/edit/:guestid ",
+    "/guest/edit/:guestid",
     getGuestMW(objRepo),
     getBurgersMW(objRepo),
     saveGuestMW(objRepo),
