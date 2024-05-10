@@ -1,75 +1,43 @@
-<%- include ('header',{pagetitle: 'Vendégek'}) -%>
-    <div class="ribbon">
-      <div>
-        <button
-          type="button"
-          class="ribbonbutton"
-          onclick="window.location.href='/guest';"
-        >
-          Vendégek
-        </button>
-      </div>
-      <div>
-        <button
-          type="button"
-          class="ribbonbutton"
-          onclick="window.location.href='/burger';"
-        >
-          Hamburgerek
-        </button>
-      </div>
-    </div>
-    <div class="heading">
-      <h1>Vendégek</h1>
-      <div>
-        <button
-          type="button"
-          class="button"
-          onclick="window.location.href='guesteditnew.html';"
-        >
-          Új vendég
-        </button>
-      </div>
-    </div>
-    <div>
-      <table>
-        <tr>
-          <th>Név</th>
-          <th>Érkezés</th>
-          <th>Hamburger</th>
+<%- include ('listheader',{title: 'Vendégek', newname: 'guest'}) -%>
+<div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Név</th>
+        <th>Érkezés</th>
+        <th>Hamburger</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% guests.forEach(function(guest){ %>
+      <tr>
+        <td>
+          <%= guest.nev %>
+        </td>
+        <td>
+          <%= guest.erkezes %>
+        </td>
+        <td>
+          <% burgers.forEach(function(burger){ %>
+          <%if(guest.burger == burger._id){
+                  bucicnt++; 
+                  pogicnt += burger.pogacsak;
+                  %><%=burger.nev%><%
+                }
+                  %>
+          <% }); %>
+        </td>
+        <td style="border: none; background-color: rgba(0, 0, 0, 0);width:30px;white-space: nowrap">
+          <a href="/guest/edit/<%= guest._id %>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i>Módosítás</a>
+        </td>
+        <td style="border: none; background-color: rgba(0, 0, 0, 0);"><a href="/guest/del/<%= guest._id %>" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i>Törlés</a></td>
         </tr>
-        <tr>
-          <td>Gipsz Jakab</td>
-          <td>4</td>
-          <td>Dupla húsos</td>
-          <td class="tablebutton">
-            <button
-              type="button"
-              onclick="window.location.href='guesteditnew.html';"
-            >
-              Módosítás
-            </button>
-          </td>
-          <td class="tablebutton"><button type="button">Törlés</button></td>
-        </tr>
-        <tr>
-          <td>Kovács Béla</td>
-          <td>2</td>
-          <td>Csípős hamburger szószos</td>
-          <td class="tablebutton">
-            <button
-              type="button"
-              onclick="window.location.href='guesteditnew.html';"
-            >
-              Módosítás
-            </button>
-          </td>
-          <td class="tablebutton"><button type="button">Törlés</button></td>
-        </tr>
-      </table>
-      <p>
-        Elkészítendő bucik száma: 0 <br />
-        Elkészítendő húspogácsák száma: 0
-      </p>
-    </div>
+      <% }); %>
+      </tbody>
+  </table>
+  <h5>
+    Elkészítendő bucik száma: <%=bucicnt%> <br />
+    Elkészítendő húspogácsák száma: <%=pogicnt%>
+  </h5>
+  </div>
 <%- include ('footer') %>

@@ -18,6 +18,8 @@ module.exports = function (objectrepository) {
         burger: 1
       }
     ]
+    res.locals.bucicnt = 0;
+    res.locals.pogicnt = 0;
     return next();
   };
 };

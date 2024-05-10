@@ -1,40 +1,30 @@
-<!doctype html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="css/style.css" />
-    <title> pagetitle </title>
-  </head>
-  <body>
-    <div class="ribbon">
-        <div>
-          <button
-            type="button"
-            class="ribbonbutton"
-            onclick="window.location.href='guest';"
-          >
-            Vendégek
-          </button>
-        </div>
-        <div>
-          <button
-            type="button"
-            class="ribbonbutton"
-            onclick="window.location.href='burger';"
-          >
-            Hamburgerek
-          </button>
-        </div>
+<%- include ('header',{title: title}) %>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/guest">Vendégek</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/burger">Hamburgerek</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+<div class="heading">
+  <div class="container">
+    <div class="row">
+      <div class="col-">
+        <h1> <%= title %> </h1>
       </div>
-      <div class="heading">
-        <h1> listname </h1>
-        <div>
-          <button
-            type="button"
-            class="button"
-            onclick="window.location.href='burgereditnew';"
-          >
-            newname
-          </button>
-        </div>
+      <div class="col">
+        <a class="btn btn-sm btn-primary" href='/<%= newname %>/new' ;">
+          Új <% if (newname == 'burger') { %> burger<%} else{%>vendég<%} %>
+        </a>
       </div>
+    </div>
+    </div>
+<div>
+</div>
+</div>

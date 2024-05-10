@@ -1,36 +1,32 @@
-<%- include ('listheader',{pagetitle: 'Hamburger létrehozás/módosítás'}, {listname: 'Hamburgerek'}, {newname: 'Új burger'}) -%>
-
-    <div>
-      <table>
-        <tr>
-          <th>Név</th>
-          <th>Húspogácsák</th>
-          <th>Van-e csípős</th>
-          <th>Van-e szósz</th>
-          <th>Kül. összetevő</th>
-        </tr>
-        <% burgers.forEach(function(burger){ %>
-          <tr>
-            <td>
-              <%= burger.nev %>
-            </td>
-            <td>
-              <%= burger.pogacsak %>
-            </td>
-            <td><input type="checkbox" <%= burger.csipos ? "checked" : "" %>/></td>
-            <td><input type="checkbox" <%= burger.szosz ? "checked" : "" %>/></td>
-            <td></td>
-            <td class="tablebutton">
-              <button
-                type="button"
-                onclick="window.location.href='burgereditnew';"
-              >
-                Módosítás
-              </button>
-            </td>
-            <td class="tablebutton"><button type="button">Törlés</button></td>
-          </tr>
-        <% }); %>
-      </table>
-    </div>
+<%- include ('listheader',{title: 'Hamburgerek', newname: 'burger'}) -%>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>Név</th>
+      <th>Húspogácsák</th>
+      <th>Van-e csípős</th>
+      <th>Van-e szósz</th>
+      <th>Kül. összetevő</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% burgers.forEach(function(burger){ %>
+    <tr>
+      <td>
+        <%= burger.nev %>
+      </td>
+      <td>
+        <%= burger.pogacsak %>
+      </td>
+      <td><input type="checkbox" <%= burger.csipos ? "checked" : "" %> /></td>
+      <td><input type="checkbox" <%= burger.szosz ? "checked" : "" %> /></td>
+      <td><%= burger.extra %></td>
+      <td style="border: none; background-color: rgba(0, 0, 0, 0);width:30px;white-space: nowrap">
+        <a href="/burger/edit/<%= burger._id %>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i>Módosítás</a>
+      </td>
+      <td style="border: none; background-color: rgba(0, 0, 0, 0);"><a href="/burger/del/<%= burger._id %>" class="btn btn-sm btn-danger"><i class="far fa-trash-alt"></i>Törlés</a></td>
+      </tr>
+      <% }); %>
+  </tbody>
+</table>
 <%- include ('footer') %>

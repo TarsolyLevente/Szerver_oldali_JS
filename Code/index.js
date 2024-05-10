@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
-app.set("view engine", "ejs")
+const bodyParser = require("body-parser");
 
-app.use(express.static("public"));
+app.set("view engine", "ejs");
 
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
+
+app.use(express.static("static"));
 // Load routing
 require("./route/routes")(app);
 

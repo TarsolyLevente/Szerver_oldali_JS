@@ -1,42 +1,37 @@
-<%- include ('header',{pagetitle: 'Vendég létrehozás/módosítás'}) %>
-    <h1>Vendég létrehozás/módosítás</h1>
-    <div class="flex">
-      <p>Név</p>
-      <input type="text" />
+<%- include ('header',{title: 'Vendég létrehozás/módosítás'}) %>
+<h1>Vendég
+  <% if (typeof guest == 'undefined') { %> létrehozás<%} else{%>módosítás<%} %>
+</h1>
+<form method="POST">
+  <div class="form-group">
+    <label for="nev">Név</label>
+    <input type="text" class="form-control" id="nev" name="nev" value=" <%= (typeof guest == 'undefined') ? "" : guest.nev %>" />
+  </div>
+  <div class="form-group">
+    <label for="erkezes">Érkezés</label>
+    <select class="custom-select mr-sm-2" id="erkezes" name="erkezes">
+      <option value="1" <%= (typeof guest == 'undefined') ? "" : (guest.erkezes == "1" ? 'selected' : '') %>>1</option>
+      <option value="2" <%= (typeof guest == 'undefined') ? "" : (guest.erkezes == "2" ? 'selected' : '') %>>2</option>
+      <option value="3" <%= (typeof guest == 'undefined') ? "" : (guest.erkezes == "3" ? 'selected' : '') %>>3</option>
+      <option value="4" <%= (typeof guest == 'undefined') ? "" : (guest.erkezes == "4" ? 'selected' : '') %>>4</option>
+      <option value="5" <%= (typeof guest == 'undefined') ? "" : (guest.erkezes == "5" ? 'selected' : '') %>>5</option>
+      <option value="6" <%= (typeof guest == 'undefined') ? "" : (guest.erkezes == "6" ? 'selected' : '') %>>6</option>
+      <option value="7" <%= (typeof guest == 'undefined') ? "" : (guest.erkezes == "7" ? 'selected' : '') %>>7</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="burger">Hamburger</label>
+    <select class="custom-select mr-sm-2" id="burger" name="burger">
+      <% burgers.forEach(function(burger){ %>
+      <option value="<%= burger._id %>" <%= (typeof guest == 'undefined') ? "" : (guest.burger == burger._id ? 'selected' : '') %>>
+        <%= burger.nev %>
+      </option>
+      <% }); %>
+    </select>
+  </div>
+  <div class="flex">
+    <input type="submit" class="btn btn-primary" value="Mentés és vissza" />
+    <a class="btn btn-secondary" href="/guest">Vissza</a>
     </div>
-    <div class="flex">
-      <p>Érkezés</p>
-      <select>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-      </select>
-    </div>
-    <div class="flex">
-      <p>Hamburger</p>
-      <select>
-        <option value="1">Dupla húsos</option>
-        <option value="2">Csípős hamburger szószos</option>
-      </select>
-    </div>
-    <div class="flex">
-      <button
-        type="button"
-        class="button"
-        onclick="window.location.href='guests.html';"
-      >
-        Mentés és vissza
-      </button>
-      <button
-        type="button"
-        class="button"
-        onclick="window.location.href='guests.html';"
-      >
-        Vissza
-      </button>
-    </div>
+</form>
 <%- include ('footer') %>

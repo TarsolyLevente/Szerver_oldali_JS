@@ -5,7 +5,7 @@ const renderMW = require("../middleware/common/renderMW");
 /**
  * guest
  */
-const getGuestsMW = require("../middleware/guest/getGuestMW");
+const getGuestsMW = require("../middleware/guest/getGuestsMW");
 const getGuestMW = require("../middleware/guest/getGuestMW");
 const saveGuestMW = require("../middleware/guest/saveGuestMW");
 const delGuestMW = require("../middleware/guest/delGuestMW");
@@ -23,11 +23,21 @@ module.exports = function (app) {
   /**
    * Main page => Guests page
    */
-  app.get("/", getGuestsMW(objRepo), renderMW(objRepo, "guests"));
+  app.get(
+    "/",
+    getGuestsMW(objRepo),
+    getBurgersMW(objRepo),
+    renderMW(objRepo, "guests")
+  );
   /**
    * Guests page
    */
-  app.get("/guest", getGuestsMW(objRepo), renderMW(objRepo, "guests"));
+  app.get(
+    "/guest",
+    getGuestsMW(objRepo),
+    getBurgersMW(objRepo),
+    renderMW(objRepo, "guests")
+  );
   /**
    * Add new guest
    */
@@ -35,7 +45,7 @@ module.exports = function (app) {
     "/guest/new",
     getBurgersMW(objRepo),
     saveGuestMW(objRepo),
-    renderMW(objRepo, "guesteditnew"),
+    renderMW(objRepo, "guesteditnew")
   );
   /**
    * Edit guest
@@ -45,7 +55,7 @@ module.exports = function (app) {
     getGuestMW(objRepo),
     getBurgersMW(objRepo),
     saveGuestMW(objRepo),
-    renderMW(objRepo, "guesteditnew"),
+    renderMW(objRepo, "guesteditnew")
   );
   /**
    * Delete guest
@@ -62,7 +72,7 @@ module.exports = function (app) {
   app.use(
     "/burger/new",
     saveBurgerMW(objRepo),
-    renderMW(objRepo, "burgereditnew"),
+    renderMW(objRepo, "burgereditnew")
   );
   /**
    * Edit burger
@@ -71,7 +81,7 @@ module.exports = function (app) {
     "/burger/edit/:burgerid",
     getBurgerMW(objRepo),
     saveBurgerMW(objRepo),
-    renderMW(objRepo, "burgereditnew"),
+    renderMW(objRepo, "burgereditnew")
   );
   /**
    * Delete burger

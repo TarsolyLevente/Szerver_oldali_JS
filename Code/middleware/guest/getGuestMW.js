@@ -4,6 +4,12 @@
  */
 module.exports = function (objectrepository) {
   return function (req, res, next) {
-    return next();
-  };
+    res.locals.guest = {
+      _id: 0,
+      nev: "Gipsz Jakab",
+      erkezes: 4,
+      burger: 0
+    };
+  return next();
+};
 };
