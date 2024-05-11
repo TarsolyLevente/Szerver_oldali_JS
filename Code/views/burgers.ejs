@@ -18,8 +18,8 @@
       <td>
         <%= burger.pogacsak %>
       </td>
-      <td><input type="checkbox" <%= burger.csipos ? "checked" : "" %> /></td>
-      <td><input type="checkbox" <%= burger.szosz ? "checked" : "" %> /></td>
+      <td><input type="checkbox" <%= burger.csipos ? "checked" : "" %> disabled /></td>
+      <td><input type="checkbox" <%= burger.szosz ? "checked" : "" %> disabled /></td>
       <td><%= burger.extra %></td>
       <td style="border: none; background-color: rgba(0, 0, 0, 0);width:30px;white-space: nowrap">
         <a href="/burger/edit/<%= burger._id %>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i>Módosítás</a>

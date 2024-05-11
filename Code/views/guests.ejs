@@ -18,14 +18,7 @@
           <%= guest.erkezes %>
         </td>
         <td>
-          <% burgers.forEach(function(burger){ %>
-          <%if(guest.burger == burger._id){
-                  bucicnt++; 
-                  pogicnt += burger.pogacsak;
-                  %><%=burger.nev%><%
-                }
-                  %>
-          <% }); %>
+          <%= guest._assignedto ? guest._assignedto.nev : 'Nem kér' %>
         </td>
         <td style="border: none; background-color: rgba(0, 0, 0, 0);width:30px;white-space: nowrap">
           <a href="/guest/edit/<%= guest._id %>" class="btn btn-sm btn-primary"><i class="far fa-edit"></i>Módosítás</a>

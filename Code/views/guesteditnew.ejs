@@ -20,10 +20,10 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="burger">Hamburger</label>
-    <select class="custom-select mr-sm-2" id="burger" name="burger">
+    <label for="_assignedto">Hamburger</label>
+    <select class="custom-select mr-sm-2" id="_assignedto" name="_assignedto">
       <% burgers.forEach(function(burger){ %>
-      <option value="<%= burger._id %>" <%= (typeof guest == 'undefined') ? "" : (guest.burger == burger._id ? 'selected' : '') %>>
+      <option value="<%= burger._id %>" <%= (typeof guest == 'undefined') ? "" : (guest._assignedto == burger._id ? 'selected' : '') %>>
         <%= burger.nev %>
       </option>
       <% }); %>
