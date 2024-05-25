@@ -9,12 +9,14 @@ module.exports = function (objectrepository) {
 		BurgerModel.findOne({ _id: req.params.burgerid })
 			.then((burger) => {
 				if (!burger) {
-					return next(new Error("Burger not found"));
+					const err = new Error("Burger not found");
+					return Promise.reject(err);
 				}
-
 				res.locals.burger = burger;
 				return next();
 			})
-			.catch((err) => next(err));
+			.catch((err) => {
+				return next(err);
+			});
 	};
 };

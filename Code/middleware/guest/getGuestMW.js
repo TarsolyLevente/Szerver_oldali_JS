@@ -10,7 +10,8 @@ module.exports = function (objectrepository) {
 			.populate("_assignedto")
 			.then((guest) => {
 				if (!guest) {
-					return next(new Error("Guest not found"));
+					const err = new Error("Guest not found");
+					return Promise.reject(err);
 				}
 
 				res.locals.guest = guest;
